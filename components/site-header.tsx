@@ -102,13 +102,13 @@ export function SiteHeader() {
           id="mobile-nav"
           className="border-b border-line bg-cream lg:hidden"
         >
-          <nav className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4 sm:px-8" aria-label="Mobile">
+          <nav className="mx-auto flex max-w-6xl flex-col items-center gap-1 px-5 py-4 sm:px-8" aria-label="Mobile">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-sm font-semibold tracking-wide text-navy uppercase hover:bg-cream-dark"
+                className="w-full rounded-lg px-3 py-3 text-center text-sm font-semibold tracking-wide text-navy uppercase hover:bg-cream-dark"
               >
                 {link.label}
               </a>
