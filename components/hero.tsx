@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { PhoneIcon, ShieldIcon } from "@/components/icons";
+import { HeroSlides } from "@/components/hero-slides";
 import { site } from "@/lib/site";
 
 const badges = ["Licensed", "Bonded", "Insured"] as const;
@@ -8,18 +8,11 @@ const badges = ["Licensed", "Bonded", "Insured"] as const;
 export function Hero() {
   return (
     <section className="relative isolate min-h-[88vh] overflow-hidden bg-navy-deep text-white">
-      <Image
-        src="https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?auto=format&fit=crop&w=2400&q=80"
-        alt="Professional roofers installing shingles on a residential roof"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[center_20%]"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/88 via-navy-deep/55 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/50 via-transparent to-navy-deep/15" />
+      <HeroSlides />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-navy-deep/88 via-navy-deep/55 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-navy-deep/50 via-transparent to-navy-deep/15" />
 
-      <div className="relative mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-5 py-20 sm:px-8 lg:px-10">
+      <div className="relative z-20 mx-auto flex min-h-[88vh] max-w-6xl flex-col justify-center px-5 py-20 pb-16 sm:px-8 lg:px-10">
         <p className="font-display mb-5 text-sm tracking-[0.28em] text-copper uppercase">
           Richmond, Virginia · Family-owned roofing
         </p>
