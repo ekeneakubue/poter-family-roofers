@@ -96,6 +96,14 @@ export function ArrowIcon(props: IconProps) {
   );
 }
 
+export function ArrowUpIcon(props: IconProps) {
+  return (
+    <svg {...icon(props)}>
+      <path d="M12 19V5M6 11l6-6 6 6" />
+    </svg>
+  );
+}
+
 export function StarIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
