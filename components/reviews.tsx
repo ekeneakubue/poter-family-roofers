@@ -1,8 +1,15 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 import { GoogleIcon, StarIcon } from "@/components/icons";
-import { reviews, site } from "@/lib/site";
+import { reviews } from "@/lib/site";
+
+const initialCount = 3;
 
 export function Reviews() {
+  const [expanded, setExpanded] = useState(false);
+  const visibleReviews = expanded ? reviews : reviews.slice(0, initialCount);
+
   return (
     <section id="reviews" className="section-pad scroll-mt-28 bg-cream">
       <div className="mx-auto max-w-6xl">
@@ -31,7 +38,7 @@ export function Reviews() {
         </div>
 
         <div className="mt-10 grid gap-4 lg:grid-cols-3">
-          {reviews.map((review) => (
+          {visibleReviews.map((review) => (
             <article
               key={review.name}
               className="flex flex-col rounded-2xl border border-line bg-white p-6"
@@ -58,14 +65,14 @@ export function Reviews() {
         </div>
 
         <div className="mt-10">
-          <Link
-            href={site.reviewsLink}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            aria-expanded={expanded}
+            onClick={() => setExpanded((value) => !value)}
             className="inline-flex rounded-full border border-navy px-6 py-3 text-sm font-semibold tracking-[0.12em] text-navy uppercase hover:bg-navy hover:text-white"
           >
-            View All Reviews
-          </Link>
+            {expanded ? "Show Less Reviews" : "View All Reviews"}
+          </button>
         </div>
       </div>
     </section>

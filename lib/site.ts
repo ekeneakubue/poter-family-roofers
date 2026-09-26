@@ -170,6 +170,21 @@ export const reviews = [
     location: "Henrico",
     text: "Clear estimate, no surprise add-ons, and they treated the property carefully. This is who we will call next time.",
   },
+  {
+    name: "David L.",
+    location: "Glen Allen",
+    text: "We needed flashing around the chimney before the next rain. They explained the cause, fixed it the next morning, and the stain never came back.",
+  },
+  {
+    name: "Karen S.",
+    location: "Mechanicsville",
+    text: "The crew was respectful of the yard and finished the shingle replacement on schedule. The written estimate matched the final bill.",
+  },
+  {
+    name: "Robert T.",
+    location: "Short Pump",
+    text: "Called after wind pulled shingles off the garage. Same-day tarp, then a clean repair. I would use Porter Family again.",
+  },
 ] as const;
 
 export const projects = [
