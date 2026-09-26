@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f3eee4;
+  --foreground: #1a1f24;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy: #132033;
+  --color-navy-mid: #1b3148;
+  --color-navy-deep: #0b1520;
+  --color-copper: #c9612a;
+  --color-copper-hover: #a84e1f;
+  --color-cream: #f3eee4;
+  --color-cream-dark: #e7dfd2;
+  --color-ink: #1a1f24;
+  --color-muted: #5c6570;
+  --color-line: #d9d1c4;
+  --font-sans: var(--font-source-sans);
+  --font-display: var(--font-oswald);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #c9612a;
+  color: #fff;
+}
+
+@layer utilities {
+  .section-pad {
+    @apply px-5 py-20 sm:px-8 sm:py-24 lg:px-10;
+  }
+}
+
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq-item[open] summary .faq-plus {
+  transform: rotate(45deg);
 }
